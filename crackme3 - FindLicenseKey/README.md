@@ -13,6 +13,9 @@ Prosedur analisis diawali dengan melakukan pemeriksaan permukaan terhadap kompon
 Saat mengeksekusi perintah ekstraksi teks:
 bash
 strings ./findlicensekey
+
+<img width="647" height="697" alt="image" src="https://github.com/user-attachments/assets/bbb8ca66-3fcd-4444-ad16-60dbf88299d8" />
+
 Saya menemukan sebuah rangkaian karakter alfanumerik acak yang sangat spesifik dan mencurigakan di dalam segmen .rodata:QAZPLWSXOKMEYDCIJNRFVUHBTGqpalzmwoeirutyskdjfhgxncbv1750284369Karakteristik rangkaian ini terdiri atas huruf besar, huruf kecil, dan angka tanpa pola sekuensial standar. Berdasarkan analisis awal, saya menduga kuat bahwa rangkaian ini berfungsi sebagai Custom Lookup Table untuk algoritma substitusi chiper.
 
 ### B. Dekompilasi Fungsi main via Ghidra
