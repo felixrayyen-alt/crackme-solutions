@@ -3,6 +3,7 @@ https://crackmes.one/crackme/6a0c8b608fab7bbca2730221
 
 **Disclaimer:** 
 Hari ini gua nyoba ngebedah sebuah file tantangan (*crackme*) yang namanya **james**. Tujuannya simpel: kita harus nyari *password* yang bener biar programnya ngeluarin pesan sukses, bukan malah ngatain kita salah *password*. Sebelumnya, file ini sebenernya ada 2 setelah di kompress. 
+
 <img width="512" height="395" alt="image" src="https://github.com/user-attachments/assets/189782c0-252d-4204-8eef-d76087610e41" />
 
 Jadi, konteks crackme si james ini ada di asset semua ya. 
