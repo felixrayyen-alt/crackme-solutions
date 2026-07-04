@@ -74,7 +74,7 @@ Kondisi Sukses/Gagal: Ada if-else yang ngecek: "Kalau perbandingan tadi hasilnya
 Setelah gua perhatiin kode decompile dari Ghidra di atas, keliatan banget kalau fungsi ini adalah fungsi yang kepanggil pas kita neken tombol "Login" atau "Submit". Berikut adalah alur logika yang terjadi di dalam fungsinya:
 <img width="512" height="337" alt="image" src="https://github.com/user-attachments/assets/f2c5133b-bf91-45b3-b39f-d898e5c9fa05" />
 
-Di baris awal, program ngambil teks yang kita ketik di kotak input.
+1. Di baris awal, program ngambil teks yang kita ketik di kotak input.
 Kodenya: QLineEdit::text() dan QString::toStdString.
 Artinya: Program ngebaca tulisan dari antarmuka kotak teks (biasanya buat masukin username atau password), lalu diubah jadi format string yang bisa diproses sama bahasa C++.
 
