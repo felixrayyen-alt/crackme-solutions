@@ -34,6 +34,7 @@ Bash
 strings james
 
 <img width="764" height="478" alt="image" src="https://github.com/user-attachments/assets/e37b1e1f-d7f7-4362-9edd-ec7856b7e0a8" />
+
 (_ga bisa masukin semua karena panjang banget pas di cek_)
 Hasilnya:
 Gua dapet banyak banget teks sampah, tapi mata gua langsung tertuju ke beberapa kalimat menarik:
