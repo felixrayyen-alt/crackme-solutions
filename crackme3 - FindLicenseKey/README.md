@@ -16,7 +16,9 @@ strings ./findlicensekey
 
 <img width="647" height="697" alt="image" src="https://github.com/user-attachments/assets/bbb8ca66-3fcd-4444-ad16-60dbf88299d8" />
 
-Saya menemukan sebuah rangkaian karakter alfanumerik acak yang sangat spesifik dan mencurigakan di dalam segmen .rodata:QAZPLWSXOKMEYDCIJNRFVUHBTGqpalzmwoeirutyskdjfhgxncbv1750284369Karakteristik rangkaian ini terdiri atas huruf besar, huruf kecil, dan angka tanpa pola sekuensial standar. Berdasarkan analisis awal, saya menduga kuat bahwa rangkaian ini berfungsi sebagai Custom Lookup Table untuk algoritma substitusi chiper.
+Saya menemukan sebuah rangkaian karakter alfanumerik acak yang sangat spesifik dan mencurigakan di dalam segmen .rodata:QAZPLWSXOKMEYDCIJNRFVUHBTGqpalzmwoeirutyskdjfhgxncbv1750284369
+
+Karakteristik rangkaian ini terdiri atas huruf besar, huruf kecil, dan angka tanpa pola sekuensial standar. Berdasarkan analisis awal, saya menduga kuat bahwa rangkaian ini berfungsi sebagai Custom Lookup Table untuk algoritma substitusi chiper.
 
 ### B. Dekompilasi Fungsi main via Ghidra
 
@@ -52,8 +54,9 @@ Indeks_Substitusi_i = (i + ASCII_Username_i) mod{62}
 
 Untuk mereplikasi perilaku kriptografi internal program tanpa harus melakukan patching atau manipulasi register memori secara dinamis, saya mengimplementasikan algoritma di atas ke dalam skrip otomatisasi berbasis Python.Python#!/usr/bin/env python3
 
-# keygen.py - Otomatisator Pembuat Lisensi untuk findlicensekey
+### keygen.py - Otomatisator Pembuat Lisensi untuk findlicensekey
 
+```
 def generate_key(username: str) -> str:
     lookup_table = "QAZPLWSXOKMEYDCIJNRFVUHBTGqpalzmwoeirutyskdjfhgxncbv1750284369"
     license_key = ""
@@ -77,6 +80,13 @@ def generate_key(username: str) -> str:
         print(f"[+] License Key: {generated_key}")
     except Exception as e:
         print(f"[-] Kesalahan: {e}")
+
+```
+
+## 3.1 Pembuatan Skrip Keygen ( Manual )
+Pembuatan keygen juga bisa dilakukan secara manual dengan membuat table sesuai rangkaian alfanumerik (QAZPLWSXOKMEYDCIJNRFVUHBTGqpalzmwoeirutyskdjfhgxncbv1750284369) dan menggabungkan rumus indeks yang tadi sudah kita analisis dengan sebagai berikut:
+
+<img width="960" height="1280" alt="image" src="https://github.com/user-attachments/assets/244fa414-13f3-4d3b-a3c3-3fd10123ec40" />
         
 ## 4. Langkah Prosedural Eksekusi Akhir (Terminal Commands)
 
@@ -86,13 +96,18 @@ Berikut adalah urutan instruksi di terminal lingkungan kerja untuk mengeksploita
 Output Sistem:Plaintext[+] Username   : felixrayyenzomeklopoiuyt
 [+] License Key: ssngQ8kLWn4K9676QLSSACFI
 
-- Langkah 2: Inisialisasi Program Target dengan Parameter ArgumenMenjalankan berkas crackme dengan menyematkan parameter username 24 karakter yang sama persis saat proses pembuatan kunci.Bash./findlicensekey felixrayyenzomeklopoiuyt
+- Langkah 2: Inisialisasi Program Target dengan Parameter Argumen menjalankan berkas crackme dengan menyematkan parameter username 24 karakter yang sama persis saat proses pembuatan kunci.
 
-- Langkah 3: Inputasi Lisensi dan Kelulusan Gerbang ValidasiKetika program memicu interupsi input, masukkan kode lisensi hasil kalkulasi skrip Python:Plaintext
+Bash./findlicensekey felixrayyenzomeklopoiuyt
+
+- Langkah 3: Inputasi Lisensi dan Kelulusan Gerbang Validasi ketika program memicu interupsi input, masukkan kode lisensi hasil kalkulasi skrip python tadi.
 Enter license key to continue: 
 ssngQ8kLWn4K9676QLSSACFI
 
-Hasil Akhir Konfirmasi:PlaintextKey validated
+Hasil Akhir Konfirmasi: PlaintextKey validated
+
+<img width="907" height="112" alt="image" src="https://github.com/user-attachments/assets/cf9f4a66-b277-45c4-8cab-7b246443d4fe" />
+
 ## 5. Kesimpulan Analisis
 
 Eksperimen ini membuktikan bahwa metode analisis statis (Static Analysis) dan pendekatan matematika terbalik (Reverse Cryptography) jauh lebih efisien untuk menembus proteksi berbasis validasi logis konstan.Dengan memetakan cara kerja fungsi pengubah indeks FUN_00101189, pembuatan program pembobol (keygen) independen dapat dilakukan secara bersih tanpa perlu melakukan intervensi memori yang berisiko memicu proteksi anti-debugging aktif.
