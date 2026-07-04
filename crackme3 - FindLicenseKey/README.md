@@ -51,6 +51,7 @@ Indeks_Substitusi_i = (i + ASCII_Username_i) mod{62}
 ## 3. Pembuatan Skrip Keygen Interaktif (Python)
 
 Untuk mereplikasi perilaku kriptografi internal program tanpa harus melakukan patching atau manipulasi register memori secara dinamis, saya mengimplementasikan algoritma di atas ke dalam skrip otomatisasi berbasis Python.Python#!/usr/bin/env python3
+
 # keygen.py - Otomatisator Pembuat Lisensi untuk findlicensekey
 
 def generate_key(username: str) -> str:
@@ -67,8 +68,7 @@ def generate_key(username: str) -> str:
         license_key += lookup_table[index]
         
     return license_key
-
-if __name__ == "__main__":
+    if __name__ == "__main__":
     # Menggunakan sampel username valid sepanjang 24 karakter
     sample_user = "felixrayyenzomeklopoiuyt"
     try:
