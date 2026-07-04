@@ -1,4 +1,4 @@
-# Jurnal Pembelajaran: Reverse Engineering - Kriptografi Kustom "findlicensekey"
+# 📓 Learning Journal : Reverse Engineering - Kriptografi Kustom "findlicensekey"
 
 **Disclaimer:** Dokumen ini merupakan catatan jurnal pembelajaran saya dalam menganalisis algoritma pembuatan lisensi (*keygen*) pada tantangan *crackme*. Fokus analisis ini adalah memetakan kerentanan kriptografi kustom menggunakan metode analisis statis (*Static Analysis*).
 
